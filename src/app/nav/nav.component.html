@@ -1,15 +1,25 @@
-<p>
-  <mat-toolbar color="primary">
+  <mat-toolbar color="accent">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>My App</span>
     <span class="spacer"></span>
+    <div  *ngFor="let tab of tabs" class="nav-item"
+         routerLink="/{{tab}}"
+         routerLinkActive="nav-item__active"
+    >
+      <span>{{tab}}</span>
+    </div>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>favorite</mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>share</mat-icon>
     </button>
+    <button *ngIf="!lightMode" (click)="changeTheme()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>sunny</mat-icon>
+    </button>
+    <button *ngIf="lightMode" (click)="changeTheme()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>nightlight</mat-icon>
+    </button>
   </mat-toolbar>
-</p>

@@ -1,3 +1,12 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.nav-item {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.nav-item__active {
+  background: black;
+}
